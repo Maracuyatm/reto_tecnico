@@ -1,54 +1,55 @@
 package retoentelgy.animales;
 
-public class Animal {
+public class Animal implements SistemaDigestivo, SistemaRespiratorio {
     private String nombre;
-    private String tipo;
+    private TipoAnimal tipo;
     private String onomatopeya;
 
-    // Constructor
-    public Animal(String nombre, String tipo, String onomatopeya) {
+    public Animal(String nombre, TipoAnimal tipo, String onomatopeya) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.onomatopeya = onomatopeya;
     }
 
-    // Métodos para determinar el tipo del animal
-    public boolean esTerrestre() {
-        return "terrestre".equalsIgnoreCase(tipo);
+    // Implementación de los métodos de la interfaz SistemaRespiratorio
+    @Override
+    public void respirar() {
+        System.out.println("Respirando...");
     }
 
-    public boolean esVolador() {
-        return "volador".equalsIgnoreCase(tipo);
+    // Implementación de los métodos de la interfaz SistemaDigestivo
+    @Override
+    public void digerir() {
+        System.out.println("Digerir alimentos...");
     }
 
-    public boolean esAcuatico() {
-        return "acuático".equalsIgnoreCase(tipo);
+    // Método tipoDesplazamiento basado en el tipo de animal
+    public void tipoDesplazamiento() {
+        switch (this.tipo) {
+            case TERRESTRE:
+                System.out.println(nombre + " camina o corre.");
+                break;
+            case VOLADOR:
+                System.out.println(nombre + " vuela o planea.");
+                break;
+            case ACUATICO:
+                System.out.println(nombre + " nada o bucea.");
+                break;
+            default:
+                System.out.println(nombre + " no tiene un tipo de desplazamiento conocido.");
+        }
     }
 
-    // Getters
     public String getNombre() {
         return nombre;
     }
 
-    public String getTipo() {
+    public TipoAnimal getTipo() {
         return tipo;
     }
 
     public String getOnomatopeya() {
         return onomatopeya;
-    }
-
-    // Setters
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public void setOnomatopeya(String onomatopeya) {
-        this.onomatopeya = onomatopeya;
     }
 
     @Override

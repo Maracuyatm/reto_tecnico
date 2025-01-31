@@ -1,26 +1,20 @@
 package retoentelgy.animales;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class App {
     public static void main(String[] args) {
         // Lista para guardar los animales
         List<Animal> animales = new ArrayList<>();
-        Set<String> animalesNombres = new HashSet<>();  // Para evitar duplicados
 
         // Verificar si se pasan argumentos
         if (args.length == 0) {
@@ -28,7 +22,7 @@ public class App {
             return;
         }
 
-        // Procesar los argumentos (por ejemplo, "lobo|terrestre|auuu")
+        // Procesar los argumentos (por ejemplo, "pato|volador|cuak")
         String input = args[0];
         String[] data = input.split("\\|");
 
@@ -38,21 +32,22 @@ public class App {
         }
 
         String nombre = data[0];
-        String tipo = data[1];
+        String tipoString = data[1];  // El tipo ahora será un String
         String onomatopeya = data[2];
 
-        // Si el animal ya existe, no lo agregamos
-        if (animalesNombres.contains(nombre)) {
-            System.out.println("El animal " + nombre + " ya ha sido creado previamente.");
-            return;
-        }
+        // Convertir el tipo de String a TipoAnimal
+        TipoAnimal tipo = TipoAnimal.valueOf(tipoString.toUpperCase()); // Convertimos el tipo a enum
 
         // Crear el objeto Animal
         Animal animal = new Animal(nombre, tipo, onomatopeya);
 
-        // Agregar el animal a la lista y al conjunto de nombres para evitar duplicados
+        // Llamar explícitamente a los métodos de las interfaces
+        animal.respirar();  // Esto debería mostrar "Respirando..."
+        animal.digerir();   // Esto debería mostrar "Digerir alimentos..."
+        animal.tipoDesplazamiento();  // Esto debería mostrar el tipo de desplazamiento según el animal
+
+        // Agregar el animal a la lista
         animales.add(animal);
-        animalesNombres.add(nombre);
 
         // Mostrar la información del animal creado
         System.out.println("Animal creado: " + animal);

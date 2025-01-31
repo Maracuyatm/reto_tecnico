@@ -1,17 +1,1 @@
-[
-  { "nombre": "golondrina", "tipo": "volador", "onomatopeya": "twee" },
-  { "nombre": "pato", "tipo": "volador", "onomatopeya": "cuac" },
-  { "nombre": "halc�n", "tipo": "volador", "onomatopeya": "kreee" },
-  { "nombre": "murci�lago", "tipo": "volador", "onomatopeya": "chchch" },
-  { "nombre": "�guila", "tipo": "volador", "onomatopeya": "caw" },
-  { "nombre": "medusa", "tipo": "acuatico", "onomatopeya": "whoosh" },
-  { "nombre": "tibur�n", "tipo": "acuatico", "onomatopeya": "grrrr" },
-  { "nombre": "ballena", "tipo": "acuatico", "onomatopeya": "whooo" },
-  { "nombre": "delf�n", "tipo": "acuatico", "onomatopeya": "ee-ee" },
-  { "nombre": "pez", "tipo": "acuatico", "onomatopeya": "glub" },
-  { "nombre": "conejo", "tipo": "terrestre", "onomatopeya": "click" },
-  { "nombre": "le�n", "tipo": "terrestre", "onomatopeya": "rugido" },
-  { "nombre": "gato", "tipo": "terrestre", "onomatopeya": "miau" },
-  { "nombre": "elefante", "tipo": "terrestre", "onomatopeya": "pffff" },
-  { "nombre": "lobo", "tipo": "terrestre", "onomatopeya": "auuu" }
-]
+[{"nombre":"aguila","tipo":"VOLADOR","onomatopeya":"caw"},{"nombre":"leon","tipo":"TERRESTRE","onomatopeya":"rugido"},{"nombre":"pez","tipo":"ACUATICO","onomatopeya":"glub"}]
