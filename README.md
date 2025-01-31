@@ -22,5 +22,19 @@ mvn exec:java -Dexec.args="golondrina|volador|twee"
 
 
 También se podría eliminar el archivo animales.json  y ejecutar el bloque, este creará el archivo con los registros.
+****************************************************************************************************************************************************
 
 Usar mvn exec:java para mostrarlos agrupados por tipo.
+Usar para filtrar según tipo:
+ mvn exec:java -Dexec.args="filtrar|acuatico"
+ mvn exec:java -Dexec.args="filtrar|terrestre"
+ mvn exec:java -Dexec.args="filtrar|volador"
+
+*************************************************************************
+Para correr el test:
+mvn test
+
+
+
+
+
